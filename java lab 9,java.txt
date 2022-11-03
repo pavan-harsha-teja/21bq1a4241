@@ -1,0 +1,60 @@
+public abstract class Shape { 
+int dim1, dim2; 
+void printArea(int dim1, int dim2) { 
+ 
+ } 
+}
+public class Rectangle extends Shape { 
+void printArea(int dim1, int dim2) { 
+ System.out.println("Area Of Rectangle : " + dim1*dim2); 
+ } 
+} 
+public class Triangle extends Shape { 
+void printArea(int dim1, int dim2) { 
+ System.out.println("Area Of Rectangle : " + 0.5*dim1*dim2); 
+ } 
+} 
+public class Circle extends Shape { 
+void printArea(int dim1, int dim2) { 
+ System.out.println("Area Of Rectangle : " + Math.PI*dim1*dim2); 
+ } 
+} 
+import java.util.Scanner; 
+public class ShapeMain { 
+public static void main(String[] args) { 
+ Scanner var = new Scanner(System.in); 
+ System.out.println("\n 1.Rectangle\n 2.Triangle\n 3.Circle\n"); 
+ System.out.print("Enter an Option : "); 
+ int opt = var.nextInt(); 
+ switch(opt) { 
+ case 1: 
+ Rectangle R = new Rectangle(); 
+ System.out.print("RECTANGLE=\n"); 
+ System.out.print("Enter Length : "); 
+ int len = var.nextInt(); 
+ System.out.print("Enter Width : "); 
+ int width = var.nextInt(); 
+ R.printArea(len, width); 
+ break; 
+ case 2: 
+ Triangle T = new Triangle(); 
+ System.out.print("TRIANGLE\n"); 
+ System.out.print("Enter Base : "); 
+ int base = var.nextInt(); 
+ System.out.print("Enter Height : "); 
+int height = var.nextInt(); 
+ T.printArea(base, height); 
+ break; 
+ case 3: 
+ Circle C = new Circle(); 
+ System.out.print("CIRCLE\n"); 
+ System.out.print("Enter Radius : "); 
+ int radius = var.nextInt(); 
+ C.printArea(radius,radius); 
+ break; 
+ default: 
+System.out.println("Invalid Option"); 
+} 
+ var.close(); 
+}
+}
